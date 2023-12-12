@@ -45,7 +45,7 @@ To build and run this app locally, follow these steps:
    - We'll leverage our strengths by assigning tasks that align with individual expertise. Regular check-ins will ensure everyone is contributing optimally.
 
 3. **Areas for Development:**
-   - Each of us aims to enhance our skills in [insert specific areas, e.g., coding languages, project management]. We can plan joint learning sessions and share resources.
+   - Each of us aims to enhance our skills in the required languages. We can plan joint learning sessions and share resources.
 
 4. **Day-to-Day Development Approach:**
 
@@ -73,7 +73,7 @@ The application follows a client-server architecture with the following technolo
 - State Management: React state
 - Styling: Bootstrap
 
-The application uses RESTful API routes for CRUD operations and employs React Router for navigation between Home and About pages.
+The application uses RESTful API routes for CRUD operations and employs React app for navigation between Home and About pages.
 
 ## Trello
 
@@ -84,7 +84,7 @@ The application uses RESTful API routes for CRUD operations and employs React Ro
 - 12-11-2023 7:21pm - Initialized repositories and deployed proof-of-life indicators for front-end and back-end.
 - 12-11-2023 7:25pm - Added Mongoose to the server, created Book schema and model, and seeded the database with sample books.
 - 12-11-2023 7:35pm - Implemented the /books route to retrieve and display books on the front-end using React.
--
+-12/12/2023 6:23 pm - Implemented the required  Create, Read, Update, and Delete functionality for Lab 12.
 
 ## Estimates
 
