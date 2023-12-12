@@ -5,7 +5,7 @@ const Book = require('./models/books.js');
 // Open a connection to the Database
 mongoose.connect( process.env.MONGODB_URL);
 
-async function seed(){
+async function seed(request, response){
 
     const fishBook = new Book({
         title: 'One Fish, Two Fish',
@@ -33,7 +33,6 @@ async function seed(){
     } catch(e) { 
         console.error(e.message);
     }
-    mongoose.disconnect();
 }
 
 seed();
