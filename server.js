@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const Books = require('./models/books.js');
 const app = express();
@@ -14,7 +15,9 @@ db.on('error',console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('Mongoose is connected')
 });
+
 app.use(cors());
+app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3001;
 
@@ -23,6 +26,29 @@ app.get('/test', (request, response) => {
   response.send('test request received')
 
 })
+app.post('/books', async (req, res) => {
+  try {
+    // Task 2: Grab properties from the request object
+    const { title, author, genre, description } = req.body;
+
+    // Task 3: Create a Book object
+    const newBook = new Books({ title, author, genre, description });
+
+    // Log to console for verification
+    console.log('New Book:', newBook);
+
+    // Task 4: Add book object to the database
+    await newBook.save();
+
+    // Task 5: Respond with JSON representation of the newly-saved book
+    res.status(201).json(newBook);
+  } catch (error) {
+    console.error('Error saving book to database:', error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 app.get('/books', async (req, res) => {
   try {
     const books = await Books.find();
